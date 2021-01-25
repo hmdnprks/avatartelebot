@@ -30,7 +30,8 @@ def respond():
   else:
     try:
       text = re.sub(r"\W", "_", text)
-      url = "https://api.adorable.io/avatars/285/{}.png".format(text.strip())
+      url = "https://api.hello-avatar.com/adorables/285/{}.png".format(text.strip())
+      print('url :', url)
       bot.sendPhoto(chat_id=chat_id, photo=url, reply_to_message_id=msg_id)
     except Exception:
       bot.sendMessage(chat_id=chat_id, text="There was a problem in the name you used, please enter different name", reply_to_message_id=msg_id)
