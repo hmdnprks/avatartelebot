@@ -46,7 +46,7 @@ def set_webhook():
     return 'webhook setup failed'
 
 @app.route('/')
-def index:
+def index():
   return '.'
 if __name__ == '__main__':
   app.run(threaded=True)
