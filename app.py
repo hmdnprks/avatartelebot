@@ -1,3 +1,4 @@
+import re
 from flask import Flask, request
 import telegram
 from telebot.credentials import bot_token, bot_user_name, URL
@@ -30,6 +31,7 @@ def respond():
   else:
     try:
       text = re.sub(r"\W", "_", text)
+      print('text :', text)
       url = "https://api.hello-avatar.com/adorables/285/{}.png".format(text.strip())
       print('url :', url)
       bot.sendPhoto(chat_id=chat_id, photo=url, reply_to_message_id=msg_id)
