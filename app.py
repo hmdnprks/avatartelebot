@@ -1,7 +1,16 @@
 import re
 from flask import Flask, request
 import telegram
-from telebot.credentials import bot_token, bot_user_name, URL
+import os
+import dotenv
+
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+  dotenv.load_dotenv(dotenv_file)
+
+bot_token = os.environ['bot_token']
+bot_user_name = os.environ['bot_username']
+URL = os.environ['URL']
 
 global bot
 global TOKEN
